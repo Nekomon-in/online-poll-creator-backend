@@ -160,4 +160,17 @@ async function startServer() {
   }
 }
 
-startServer();
+function setPollsCollection(collection) {
+  pollsCollection = collection;
+}
+
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = {
+  app,
+  startServer,
+  toObjectId,
+  setPollsCollection,
+};
