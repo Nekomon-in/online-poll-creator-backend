@@ -1,15 +1,12 @@
-name: Test Push
+name: Test PR
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
 jobs:
   test-job:
     runs-on: ubuntu-latest
-    env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2 # Pull code to ubuntu
